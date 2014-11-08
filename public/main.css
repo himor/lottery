@@ -1,0 +1,73 @@
+body {
+    background-color: #eee;
+    font-family: 'Ubuntu Mono';
+    font-size: 90%;
+}
+
+.menu {
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu a:hover {
+    color: #f00;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table tr td {
+    padding: 0px 10px 0px 10px;
+}
+
+table.lines3 tr:nth-child(6n+1) td,
+table.lines3 tr:nth-child(6n+2) td,
+table.lines3 tr:nth-child(6n+3) td {
+    background-color: #fff;
+}
+
+table.lines3 tr:nth-child(6n+1) td,
+table.lines3 tr:nth-child(6n+4) td {
+    padding-top: 4px;
+}
+
+table.lines3 tr:nth-child(6n+3) td,
+table.lines3 tr:nth-child(6n+6) td {
+    padding-bottom: 4px;
+}
+
+table.lines2 tr:nth-child(4n+1) td,
+table.lines2 tr:nth-child(4n+2) td {
+    background-color: #fff;
+}
+
+table.lines2 tr:nth-child(4n+1) td,
+table.lines2 tr:nth-child(4n+3) td {
+    padding-top: 4px;
+}
+
+table.lines2 tr:nth-child(4n+2) td,
+table.lines2 tr:nth-child(4n+4) td {
+    padding-bottom: 4px;
+}
+
+table.lines1 tr:nth-child(odd) td {
+    background-color: #fff;
+}
+
+table.lines1 tr td {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+form input[type="number"] {
+    width:50px;
+}
