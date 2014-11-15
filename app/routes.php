@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('/', [
+    'as'   => 'root',
+    'uses' => 'HomeController@statAction'
+]);
+
 Route::get('/stat', [
     'as'   => 'base',
     'uses' => 'HomeController@statAction'

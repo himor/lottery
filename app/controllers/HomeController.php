@@ -99,6 +99,8 @@ class HomeController extends BaseController
         $count = isset($data['count']) ? (int)$data['count'] : 9999;
         $set   = $this->getDataset();
 
+        $lastSequence = $set[0]['winning_numbers'];
+
         $aSet = [
             BaseAnalyzer::AN_FREQUENCY => BaseAnalyzer::getInstance(BaseAnalyzer::AN_FREQUENCY),
             BaseAnalyzer::AN_RANGE     => BaseAnalyzer::getInstance(BaseAnalyzer::AN_RANGE),
@@ -121,6 +123,8 @@ class HomeController extends BaseController
         for ($i = 0; $i < $count; $i++) {
             Builder::generate();
             $bset = Builder::getNumbers(true);
+            /* ignore numbers from last set */
+            if (5 != count(array_diff($lastSequence, $bset['set']))) continue;
             // if ($aSet[BaseAnalyzer::AN_RANGE]->checkSet($bset)) continue;
             $res = $aSet[BaseAnalyzer::AN_DISTANCE]->checkSet($bset);
             if ($res['total'] > 0) {
