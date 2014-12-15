@@ -13,5 +13,7 @@ class RemoteTest extends TestCase
         $this->assertArrayHasKey('draw_date', $single);
         $this->assertArrayHasKey('winning_numbers', $single);
         $this->assertArrayHasKey('mega_ball', $single);
+
+        $this->assertCount(5, $single['winning_numbers']);
     }
 } 
