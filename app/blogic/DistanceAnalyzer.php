@@ -184,7 +184,11 @@ class DistanceAnalyzer extends BaseAnalyzer implements Analysable
         foreach ($normal as $n)
             $total *= $n;
 
-        $normal['total'] = $total;
+        foreach ($normal as $key => $n) {
+            $normal[$key] = number_format($n, 6); 
+        }
+
+        $normal['total'] = number_format($total, 12);
 
         return $normal;
     }

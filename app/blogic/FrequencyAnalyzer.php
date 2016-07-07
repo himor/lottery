@@ -2,6 +2,8 @@
 
 /**
  * Created by PhpStorm.
+ * How often is this number on this position?
+ *
  * User: Mike
  * Date: 10/23/14
  * Time: 4:38 AM

@@ -23,16 +23,16 @@ class Builder
         self::$numbers['set'] = [];
         self::$numbers['mb']  = 0;
         for ($i = 1; $i < 6; $i++) {
-            $n = rand(1, 75);
+            $n = mt_rand(1, 75);
             while (in_array($n, self::$numbers['set'])) {
-                $n = rand(1, 75);
+                $n = mt_rand(1, 75);
             }
             self::$numbers['set'][] = $n;
         }
 
         sort(self::$numbers['set']);
 
-        self::$numbers['mb'] = rand(1, 15);
+        self::$numbers['mb'] = mt_rand(1, 15);
     }
 
     /**

@@ -18,7 +18,7 @@ class BaseController extends Controller
 
     private function getRedis()
     {
-        $redis = Redis::connection();
+        $redis = Illuminate\Support\Facades\Redis::connection();
         return $redis;
     }
 
@@ -95,14 +95,14 @@ class BaseController extends Controller
      */
     public function checkSet($set, Analysable $analyzer, $analysisType = 'default', $expires = 3600)
     {
-        $cache = $this->getCacheSet($set, $analysisType);
-        if ($cache !== null) {
-            return $cache;
-        } else {
+        //$cache = $this->getCacheSet($set, $analysisType);
+        //if ($cache !== null) {
+        //    return $cache;
+        //} else {
             $result = $analyzer->checkSet($set);
-            $this->setCacheSet($set, $analysisType, $result, $expires);
+        //    $this->setCacheSet($set, $analysisType, $result, $expires);
             return $result;
-        }
+        //}
     }
 
 }

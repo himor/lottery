@@ -94,9 +94,9 @@ class HomeController extends BaseController
      */
     public function bestAction()
     {
-        set_time_limit(120);
+        set_time_limit(300); //five minutes
         $data  = Input::all();
-        $count = isset($data['count']) ? (int)$data['count'] : 9999;
+        $count = isset($data['count']) ? (int)$data['count'] : 33333;
         $set   = $this->getDataset();
 
         $lastSequence = $set[0]['winning_numbers'];
@@ -125,7 +125,7 @@ class HomeController extends BaseController
             $bset = Builder::getNumbers(true);
             /* ignore numbers from last set */
             if (5 != count(array_diff($lastSequence, $bset['set']))) continue;
-            // if ($aSet[BaseAnalyzer::AN_RANGE]->checkSet($bset)) continue;
+            //if ($aSet[BaseAnalyzer::AN_RANGE]->checkSet($bset)) continue;
             $res = $aSet[BaseAnalyzer::AN_DISTANCE]->checkSet($bset);
             if ($res['total'] > 0) {
                 $built[]                             = array_merge($bset, ['total' => $res['total']]);
